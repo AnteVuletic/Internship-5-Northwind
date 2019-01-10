@@ -8,4 +8,4 @@ SELECT * FROM Customers WHERE Customers.Address LIKE '[0-9]%' AND Customers.Comp
 
 SELECT TOP(1) * FROM Orders,[Order Details] WHERE Orders.OrderID = [Order Details].OrderID ORDER BY [Order Details].Quantity DESC;
 
-SELECT COUNT (Customers.CustomerID) as 'Made no orders number' FROM Customers WHERE NOT EXISTS(SELECT * FROM Orders WHERE Orders.CustomerID = Customers.CustomerID);
+SELECT COUNT (Customers.CustomerID) as 'Made no orders count' FROM Customers WHERE NOT EXISTS(SELECT * FROM Orders WHERE Orders.CustomerID = Customers.CustomerID);
